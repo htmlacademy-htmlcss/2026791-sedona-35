@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
 
   <body>
@@ -53,16 +54,23 @@
     <main class="main-inner">
       <div class="header-container">
         <header class="inner-header">
-          <img src="images/jpeg/catalog_header_mountains.jpg" width="1200" height="412" alt="Горы Седоны">
           <h1 class="inner-header-title">Гостиницы Седоны</h1>
           <h2 class="visually-hidden">Крошки</h2>
           <ul class="inner-header-breadcrumbs">
-            <li class="breadcrumbs-home">
-              <a class="breadcrumbs-home-link" href="index.html"></a>
+            <li class="breadcrumbs-item">
+              <a class="breadcrumbs-link" href="index.html">
+                <img class="breadcrumbs-img" src="images/icons/icon_house.svg" alt="На главную" width="12"
+                  height="12">
+              </a>
             </li>
-            <li class="breadcrumbs-more"></li>
-            <li class="breadcrumbs-name">
-              <a class="breadcrumbs-htoels" href="#"></a>
+            <li class="breadcrumbs-item">
+              <a class="breadcrumbs-link">
+                <img class="breadcrumbs-img" src="images/icons/icon_more.svg" alt="Переход в гостиницу" width="7"
+                  height="10">
+              </a>
+            </li>
+            <li class="breadcrumbs-item">
+    <a class="breadcrumbs-link" href="catalog.html">Гостиницы</a>
             </li>
           </ul>
         </header>
@@ -119,11 +127,15 @@
               <div class="range">
                 <div class="range-inputs">
                   <label class="catalog-filter-min">
-                    <input type="number" name="min-price" class="catalog-filter-price-from" placeholder="от" value="0">
+                    <input type="number" name="min-price" class="catalog-filter-price catalog-filter-price-from" placeholder="от" value="0">
                   </label>
-                  <label class="catalog-filter-max"></label>
-                  <input type="number" name="max-price" class="catalog-filter-price-upto" placeholder="до" value="9000">
+                  <label class="catalog-filter-max">
+                  <input type="number" name="max-price" class="catalog-filter-price catalog-filter-price-upto" placeholder="до" value="9000">
+                </label>
                   <div class="range-slider">
+                    <label class="range-slider-label">
+                    <input type="range" name="range of price" class="range-of-price">
+                  </label>
                     <button class="button-apply-filter" type="submit">Применить</button>
                     <button class="button-reset-filter" type="reset">Сбросить</button>
                   </div>
@@ -139,8 +151,8 @@
       <div class="sorting-container">
         <span class="hotel-faund">Найдено гостиниц: 38</span>
         <select class="select-control" aria-label="Сортировка">
-          <option value="popular">Сначала популярное</option>
           <option value="cheap">Сначала дешевые</option>
+          <option value="popular">Сначала популярное</option>
           <option value="expensive">Сначала дорогие</option>
         </select>
         <section class="viewing mode">
@@ -189,7 +201,7 @@
                   height="17">
               </li>
             </ul>
-            <span>Рейтинг: 8,5</span>
+            <span class="raiting-view">Рейтинг: 8,5</span>
           </li>
           <li class="hotel-card">
             <a href="#" class="hotel-card-link">
@@ -218,7 +230,7 @@
                   height="17">
               </li>
             </ul>
-            <span>Рейтинг: 9,2</span>
+            <span class="raiting-view">Рейтинг: 9,2</span>
           <li class="hotel-card">
             <a href="#" class="hotel-card-link">
               <img src="images/jpeg/catalog_hotel_Desert_Quail_Inn.jpg" alt="Отель Дизерт Куэйл Инн"
@@ -242,7 +254,7 @@
                   height="17">
               </li>
             </ul>
-            <span>Рейтинг: 6,9</span>
+            <span class="raiting-view">Рейтинг: 6,9</span>
           <li class="hotel-card">
             <a href="#" class="hotel-card-link">
               <img src="images/jpeg/catalog_hotel_GreenTree_Inn.jpg" alt="Отель Грин Три Инн" class="hotel-card-image"
@@ -262,7 +274,7 @@
                   height="17">
               </li>
             </ul>
-            <span>Рейтинг: 5,0</span>
+            <span class="raiting-view">Рейтинг: 5,0</span>
           </li>
         </ul>
       </section>
@@ -272,7 +284,7 @@
       <div class="pagination">
         <ol class="pagination-list">
           <li class="pagination-item">
-            <a class="pagination-link">1</a>
+            <a class="pagination-link pagination-link-current">1</a>
           </li>
           <li class="pagination-item">
             <a class="pagination-link" href="#">2</a>
@@ -284,20 +296,20 @@
             <a class="pagination-link" href="#">4</a>
           </li>
           <li class="pagination-item">
-            <a class="pagination-link">...</a>
+            <a class="pagination-link pagination-link-more">...</a>
           </li>
           <li class="pagination-item">
-            <a class="pagination-link" href="#">5</a>
+            <a class="pagination-link" href="#">10</a>
           </li>
         </ol>
       </div>
 
       <!-- Блок с подпиской на рассылку -->
 
-      <section class="mailing">
+      <section class="mailing mailing-catalog">
         <h2 class="mailing-title">Подпишитесь на рассылку</h2>
         <p class="mailing-description">
-          Только полезная информация и никакого спама, честное бойскаутское!
+          Только полезная информация и никакого спама, <br> честное бойскаутское!
         </p>
         <form class="mailing-form" method="post" action="http://echo.htmlacademy.ru/">
           <label for="e-mail"></label>

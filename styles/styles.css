@@ -26,13 +26,45 @@ body {
 
 /* Шапка */
 
+.navigation {
+  display: flex;
+  margin: 0 70px;
+  height: 64px;
+}
+
+.navigation-menu {
+  margin-left: 30px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .navigation-item {
+  list-style-type: none;
+  padding-right: 0;
+}
+
+.navigation-for-user {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: auto 0 auto auto;
   list-style-type: none;
 }
 
 .navigation-item-for-user {
   list-style-type: none;
+  margin: auto
 }
+
+.navigation-item-for-user:nth-child(2) {
+  margin-right: 20px;
+}
+
+.navigation-link-for-user {
+  padding: 22px 12px;
+}
+
 
 .navigation-link {
   font-size: 20px;
@@ -40,10 +72,10 @@ body {
   line-height: 24px;
   text-align: center;
   text-decoration: none;
+  padding: 16px 20px;
 }
 
 .button-navigation {
-  display: inline-block;
   width: 160px;
   height: 36px;
   background-color: #756157;
@@ -54,7 +86,10 @@ body {
   font-weight: 700;
   line-height: 20px;
   font-size: 16px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Основная часть */
@@ -66,6 +101,8 @@ body {
   background-repeat: no-repeat;
   background-color: gray;
   background-size: cover;
+  display: flex;
+  align-items: center;
 }
 
 .intro::after {
@@ -82,18 +119,30 @@ body {
 .welcome_sedona {
   display: block;
   margin: 0 auto;
+  navigation-link
 }
 
 .page-information {
   height: 282px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+.page-information h2,
+p {
+  padding: 0;
+}
+
 
 .page-information-title {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
+  margin: 0 0 25px 0;
 }
 
 .page-information-description {
@@ -103,11 +152,37 @@ body {
 
 /* Преимущества */
 
+.advantages h3,
+p {
+  padding: 0;
+}
+
+.services h3,
+p {
+  padding: 0;
+}
+
 .advantages-title {
+  margin: 0 0 62px 0;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
+}
+
+.advantages-description {
+  margin: 0;
+}
+
+.advantages-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.advantages-list-theard {
+  justify-content: space-between;
 }
 
 .advantages-item {
@@ -115,6 +190,9 @@ body {
   list-style-type: none;
   height: 384px;
   width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .background-blue-color {
@@ -131,10 +209,14 @@ body {
 }
 
 .services-title {
+  margin: 0 0 30px 0;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
+}
+.services-description {
+  margin: 0;
 }
 
 .services-item {
@@ -142,29 +224,54 @@ body {
   list-style-type: none;
   height: 384px;
   width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.services-image {
+  margin: 0 0 30px 0;
 }
 
 /* Блок по поиску гостиницы в Седоне */
 
 .hotel-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 406px;
   text-align: center;
+}
+
+.hotel-search h2,
+p {
+  padding: 0;
 }
 
 .hotel-search-title {
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
 }
 
 .hotel-search-description {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
+  margin: 0 0 54px 0;
 }
 
 .hotel-search-button {
-  display: inline-block;
   width: 376px;
   height: 52px;
   background-color: #756157;
@@ -175,7 +282,10 @@ body {
   font-weight: 700;
   line-height: 36px;
   font-size: 20px;
-  text-align: center;
+  display: flex;
+  font-display: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Блок с подпиской на рассылку */
@@ -187,7 +297,15 @@ body {
   background-size: cover;
   background-color: gray;
   text-align: center;
-  color: #FFFFFF
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mailing h2,
+p {
+  padding: 0;
 }
 
 .mailing-title {
@@ -195,11 +313,13 @@ body {
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
+  margin: 0 0 20px 0;
 }
 
 .mailing-description {
   font-size: 22px;
   line-height: 26px;
+  margin: 0 0 54px 0;
 }
 
 .mailing-email-field {
@@ -211,7 +331,7 @@ body {
 }
 
 .mailing-form input[placeholder] {
-  font-family: "PT Sans";
+  font-family: inherit;
   font-size: 18px;
   line-height: 24px;
 }
@@ -231,6 +351,10 @@ body {
 }
 
 /* Подвал */
+.page-footer ul {
+  padding: 0;
+  margin: 0;
+}
 
 .footer-number-phone {
   font-size: 40px;
@@ -239,14 +363,40 @@ body {
   color: #000000;
 }
 
+.page-footer {
+  margin: 40px 70px 30px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-social-list {
+  display: flex;
+}
+
 .footer-social-item {
   list-style-type: none;
 }
 
+.button-social {
+  padding: 13px 11px;
+}
+
+
 /* Скрытые элементы */
 
 .visually-hidden {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /* Каталог */
@@ -307,7 +457,7 @@ body {
 }
 
 .catalog-filter input[value] {
-  font-family: "PT Sans";
+  font-family: inherit;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
@@ -352,7 +502,7 @@ body {
 .select-control {
   border: 2px solid #E5E5E5;
   border-radius: 4px;
-  font-family: "PT Sans";
+  font-family: inherit;
   font-size: 18px;
   font-weight: 400;
   line-height: 21px;

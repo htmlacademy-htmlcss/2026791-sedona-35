@@ -195,7 +195,7 @@
 
 /* Основная часть */
 
-.main-index {
+.main-indexicon_welcome_sedona_after {
   flex-grow: 1;
 }
 
@@ -713,7 +713,14 @@ p {
   position: relative;
   height: 4px;
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.range-bar {
+position: absolute;
+background-color: #fff;
+height: 4px;
+width: 220px;
 }
 
 .btn-toggle {
@@ -1007,7 +1014,7 @@ p {
 }
 
 .select-control:focus {
-  border: 2px solid #68A2CA;
+  outline: 2px solid #68A2CA;
 }
 
 .select-control:active {
@@ -1034,7 +1041,7 @@ p {
 }
 
 .select-control-button:focus {
-  border: 2px solid #68A2CA;
+  outline: 2px solid #68A2CA;
 }
 
 .select-control-button:active {

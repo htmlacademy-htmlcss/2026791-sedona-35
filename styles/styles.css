@@ -69,26 +69,44 @@
   position: relative;
 }
 
-.navigation-link-current::before {
-  position: absolute;
-  width: 68px;
-  bottom: -4px;
-  height: 2px;
-  background-color: #756257;
-  content: "";
-}
-
 .navigation-link-hotels {
   position: relative;
 }
 
+.navigation-link-current::before,
 .navigation-link-hotels::before {
   position: absolute;
-  width: 93px;
-  bottom: -4px;
+  width: 68px;
+  bottom: -7px;
   height: 2px;
   background-color: #756257;
   content: "";
+  z-index: 1;
+}
+
+.navigation-link-hotels::before {
+  width: 93px;
+}
+
+.navigation-link {
+  display: block;
+  color: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  padding: 16px 20px;
+}
+
+.navigation-link:hover,
+.navigation-link:focus,
+.navigation-link:active {
+  color: #756257;
+}
+
+.navigation-link:active {
+  opacity: 30%;
 }
 
 .navigation-for-user {
@@ -111,6 +129,24 @@
 
 .navigation-link-for-user {
   padding: 22px 12px;
+  display: block;
+}
+
+.navigation-link-search > svg,
+.navigation-link-favorite > svg {
+  color: #000000;
+}
+
+.navigation-link-search:hover svg,
+.navigation-link-search:focus svg,
+.navigation-link-favorite:hover svg,
+.navigation-link-favorite:focus svg {
+  color: #756257;
+}
+
+.navigation-link-search:active svg,
+.navigation-link-favorite:active svg {
+  opacity: 30%;
 }
 
 .navigation-link-favorite {
@@ -133,30 +169,6 @@
   position: absolute;
   top: 10px;
   left: 19px;
-}
-
-.navigation-link {
-  display: block;
-  color: inherit;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-  text-align: center;
-  text-decoration: none;
-  padding: 16px 20px;
-}
-
-.navigation-link:hover {
-  color: #756257;
-}
-
-.navigation-link:focus {
-  color: #756257;
-}
-
-.navigation-link:active {
-  color: #756257;
-  opacity: 30%;
 }
 
 .button {
@@ -274,58 +286,43 @@
 
 .advantages-title {
   margin: 0;
-  margin-bottom: 62px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
+  max-width: 175px;
 }
 
-.advantages-description {
-  margin: 0;
-}
-
-.background-blue-color {
-  position: relative;
-  color: #FFFFFF;
-  background-color: #82B3D3;
-}
-
-.background-blue-color::before {
-  position: absolute;
-  content: "";
+.advantages-title + hr {
   width: 60px;
   height: 2px;
   background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  margin: 30px 0;
 }
 
 .background-light-color {
-  position: relative;
   background: rgba(131, 179, 211, 0.12);
-}
-
-.background-light-color::before {
-  position: absolute;
-  content: "";
-  width: 60px;
-  height: 2px;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .background-dark-color {
   background: rgba(131, 179, 211, 0.2);
 }
 
-.route {
-  position: relative;
+.background-light-color > hr,
+.background-dark-color > hr {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.route::before {
-  position: absolute;
-  content: "";
-  width: 60px;
-  height: 2px;
-  background-color: rgba(0, 0, 0, 0.3);
+.advantages-description {
+  margin: 0;
+  max-width: 230px;
+  text-align: center;
+}
+
+.background-blue-color {
+  color: #FFFFFF;
+  background-color: #82B3D3;
 }
 
 .services-title {
@@ -335,10 +332,13 @@
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
+  max-width: 230px;
 }
 
 .services-description {
   margin: 0;
+  max-width: 230px;
+  text-align: center;
 }
 
 .services-image {
@@ -479,10 +479,7 @@
   border: transparent;
 }
 
-.mailing-email-button:hover {
-  background-color: #68A2CA;
-}
-
+.mailing-email-button:hover,
 .mailing-email-button:focus {
   background-color: #68A2CA;
 }
@@ -490,6 +487,10 @@
 .mailing-email-button:active {
   background-color: #82B3D3;
   color: rgba(255, 255, 255, 0.3);
+}
+
+.mailing-email-button:disabled {
+  background-color: #E5E5E5;
 }
 
 /* Подвал */
@@ -593,7 +594,6 @@
   background-size: cover;
   color: #FFFFFF;
   padding: 0 70px;
-  min-height: 412px;
   margin-bottom: 57px;
 }
 
@@ -606,14 +606,23 @@
 }
 
 .inner-header-breadcrumbs {
-  margin: 0 0 40px 0;
+  margin: 0;
+  margin-bottom: 40px;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .breadcrumbs-item {
   list-style-type: none;
   margin-right: 10px;
+}
+
+.breadcrumbs-more {
+  width: 6px;
+  background-image: url(../images/icons/icon_more.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .breadcrumbs-link-home {
@@ -645,6 +654,7 @@
 .catalog-filter {
   display: flex;
   gap: 70px;
+  padding-bottom: 70px;
 }
 
 .catalog-filter-group {
@@ -897,17 +907,18 @@
   font-weight: 700;
 }
 
-.button-apply-filter:hover {
-  background-color: #68A2CA;
-}
-
-.button-apply-filter:focus {
+.button-apply-filter:hover,
+.button-apply-filter:focus,
+.button-apply-filter:active {
   background-color: #68A2CA;
 }
 
 .button-apply-filter:active {
-  background-color: #68A2CA;
   color: rgba(255, 255, 255, 0.3);
+}
+
+.button-apply-filter:disabled {
+  background-color: #E6E6E6;
 }
 
 .button-reset-filter {
@@ -934,6 +945,10 @@
 
 .button-reset-filter:active {
   opacity: 30%;
+}
+
+.button-reset-filter:disabled {
+  opacity: 10%;
 }
 
 /* Блок сортировки */
@@ -971,7 +986,7 @@
   padding: 12px 0 14px 20px;
   margin-right: 70px;
   appearance: none;
-  background-image: url(../images/icons/select-icon.svg);
+  background-image: url(../images/icons/icon_select.svg);
   background-repeat: no-repeat;
   background-position: right 20px center;
 }
@@ -987,6 +1002,11 @@
 .select-control:active {
   border: 2px solid #3F5E72;
 }
+
+.select-control:disabled {
+  opacity: 30%;
+}
+
 
 .viewing-mode {
   display: flex;
@@ -1099,6 +1119,7 @@
 .hotel-card-raiting {
   display: flex;
   padding: 0;
+  align-items: center;
 }
 
 .hotel-card-buttonFavourites {
@@ -1220,7 +1241,7 @@
   width: 577px;
 }
 
-.modal-close-button {
+.modal_close_button {
   position: absolute;
   content: "";
   padding: 0;
@@ -1231,7 +1252,7 @@
   background-color: #F2F2F2;
   border-radius: 50%;
   border: none;
-  background-image: url("../images/icons/modal-close-button.svg");
+  background-image: url("../images/icons/icon_modal_close_button.svg");
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
@@ -1381,11 +1402,6 @@
   display: block;
 }
 
-.tooltip-toggle:hover,
-.tooltip-toggle:focus {
-  outline: none;
-}
-
 .field-group {
   margin: 0;
   display: flex;
@@ -1484,11 +1500,11 @@
   text-transform: uppercase;
   background-color: #83B3D3;
   color: #FFFFFF;
-  flex-grow: 1;
   height: 60px;
-  text-decoration: none;
+  width: 100%;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
 }
 
 .auth-form-button:hover,
@@ -1499,4 +1515,8 @@
 .auth-form-button:active {
   background-color: #82B3D3;
   color: rgba(255, 255, 255, 0.3);
+}
+
+.auth-form-button:disabled {
+  background-color: #E5E5E5;
 }
